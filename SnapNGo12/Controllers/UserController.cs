@@ -16,6 +16,22 @@ namespace SnapNGo12.Controllers
             return View();
         }
 
+        // POST: /Account/Register
+        [HttpPost]
+        //public Task<ActionResult> Register(User model)
+        public void Login(User model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.userName == "admin")
+                {
+                    
+                }
+
+            }
+
+        }
+
         public ActionResult Register()
         {
             return View();
@@ -29,31 +45,9 @@ namespace SnapNGo12.Controllers
             if (ModelState.IsValid)
             {
                var s = model.userName;
-                // var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                //var result = await UserManager.CreateAsync(user, model.Password);
-                //if (result.Succeeded)
-                //{
-                //  await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
-                // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                // Send an email with this link
-                // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                // return RedirectToAction("Index", "Home");
-                ////}
-                // AddErrors(result);
 
             }
 
-            // If we got this far, something failed, redisplay form
-            //return View();
-        }
-        public void PrintUserName()
-        {
-            Console.Write("Username");
-            
         }
     }
 }
